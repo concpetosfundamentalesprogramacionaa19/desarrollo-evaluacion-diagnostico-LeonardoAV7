@@ -1,0 +1,48 @@
+Algoritmo Diagnostico 
+	Definir a, b,c,d,num como entero
+	Definir costo,impuesto, precio, total_impuestos, total_precio como real 
+	Definir marca,origen como texto 
+	Escribir "Ingrese el numero de autos importados"
+	Leer num
+	Para i<-1 Hasta num Con Paso 1 Hacer
+		Escribir "Vehiculo numero " ,i
+		Escribir "Ingrese la marca del vehiculo"
+		Leer marca
+		Escribir "Ingrese el origen del vehiculo"
+		Leer origen
+		Escribir "Ingrese el costo del vehiculo"
+		Leer costo
+		
+		Si origen == "Argentina" Entonces
+			impuestos <- costo*0.20
+			precio<- costo + impuestos 
+			a<- a+1
+		SiNo
+			si origen == "Colombia" Entonces
+				impuestos <- costo*0.25
+				precio<- costo + impuestos 
+				b<-b+1
+			SiNo
+				si origen == "Chile" Entonces
+					impuestos <- costo*0.3
+					precio<- costo + impuestos 
+					c<-c+1
+				SiNo
+					impuestos <- costo*0.4
+					precio<- costo + impuestos 
+					d<-d+1
+				FinSi
+			FinSi
+		Fin Si
+		total_impuestos <- total_impuestos + impuestos
+		total_precio <- total_precio + precio 
+		
+	Fin Para
+	Escribir "El total de autos importados es: " , num 
+	Escribir "El total de impuestos generados es: " , total_impuestos
+	Escribir "El total de los precios de venta de los autos es: ", total_precio
+	Escribir "El total de autos de Argentina es: " , a
+	Escribir "El total de autos de Colombia es: " , b
+	Escribir "El total de autos de Chile es: " , c
+	Escribir "El total de autos de otros paises es: " , d
+FinAlgoritmo
